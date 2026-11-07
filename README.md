@@ -73,7 +73,3 @@ Humørsiderne følger Figma med tre spil i hver gruppe. Humøret **Svær** er en
 Siden er afprøvet i browseren ved 320, 375 og 440 px bredde: søgning med store bogstaver og mellemrum, flere kategorier, spillerantal, tidsskyder, tomme resultater, sortering, engelske tekster, gæst, gemte spil efter genindlæsning, booking, ændring, optagede tider, aflysning og lykkehjul. Alle 12 spilbilleder blev indlæst.
 
 Derudover er JavaScript-filerne syntakskontrolleret. Isolerede funktionstjek dækkede blandt andet en spilletid over 180 minutter, at originalarrayet ikke ændres, Partners ved 2/3/4 spillere, tidsmæssige overlap og alle 12 hjulfelter ved gentagne drej.
-
-## 00 · startside
-
-![00 · startside fra Figma, implementeret i browseren](docs/startside.jpg)
