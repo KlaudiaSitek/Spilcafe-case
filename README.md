@@ -74,6 +74,6 @@ Siden er afprøvet i browseren ved 320, 375 og 440 px bredde: søgning med store
 
 Derudover er JavaScript-filerne syntakskontrolleret. Isolerede funktionstjek dækkede blandt andet en spilletid over 180 minutter, at originalarrayet ikke ændres, Partners ved 2/3/4 spillere, tidsmæssige overlap og alle 12 hjulfelter ved gentagne drej.
 
-## Forsiden i browseren
+## 00 · startside
 
-![Forsiden efter implementering](docs/prototype-boss.png)
+![00 · startside fra Figma, implementeret i browseren](docs/startside.jpg)

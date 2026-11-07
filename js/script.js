@@ -241,9 +241,9 @@ function visSpil(id) {
 
 // hash er delen efter #. Kun sektionen til den valgte side bliver synlig.
 function visSide() {
+  // Uden en side efter # åbnes startsiden.
   const adresse =
-    decodeURIComponent(window.location.hash.slice(1)) ||
-    (bruger ? "opdag" : "start");
+    decodeURIComponent(window.location.hash.slice(1)) || "start";
   let side = adresse.split("/")[0];
   if (side === "spil") {
     visSpil(adresse.split("/")[1]);
@@ -261,7 +261,7 @@ function visSide() {
   document.querySelectorAll(".bottom-nav a").forEach((link) => {
     const valgt =
       link.dataset.page === side ||
-      (link.dataset.page === "opdag" && ["start", "humoer"].includes(side)) ||
+      (link.dataset.page === "opdag" && side === "humoer") ||
       (link.dataset.page === "gemte" &&
         ["profil", "mine-bookinger"].includes(side));
     if (valgt) link.setAttribute("aria-current", "page");

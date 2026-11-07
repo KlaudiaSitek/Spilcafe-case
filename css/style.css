@@ -366,38 +366,74 @@ main {
 .mood:hover img {
   transform: translateY(-3px);
 }
-.start-page {
-  padding-top: 72px;
+.page.start-page {
+  padding: 0;
+}
+.start-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 24px 22px;
 }
 .start-brand {
-  text-align: center;
-  border-bottom: 1px solid var(--blue);
-  padding-bottom: 15px;
+  display: flex;
+  align-items: flex-end;
+  height: 112px;
+}
+.start-brand > div {
+  width: 75.25%;
+  text-align: right;
+  white-space: nowrap;
 }
 .start-brand p {
   font-size: 29px;
   font-weight: 700;
   line-height: 36px;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 .start-brand small {
-  font-size: 12px;
+  display: block;
+  font-size: 13px;
+  line-height: 18px;
   font-weight: 700;
+}
+.start-divider {
+  height: 1px;
+  background: var(--blue);
 }
 .language-row {
   display: flex;
   justify-content: flex-end;
-  margin-top: 15px;
+  height: 32px;
+}
+.start-page .language-button {
+  font-size: 15px;
+}
+.start-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 17.56px;
 }
 .start-logo {
   display: block;
-  width: 100%;
+  width: 96.71%;
   height: auto;
-  max-width: 392px;
-  margin: 52px auto 50px;
+  margin: 0;
 }
 .start-login {
-  min-height: 55px;
+  height: 55px;
+  margin: 0;
+  border-width: 1.55px;
+  border-radius: 25px;
+  font-size: 15.5px;
+}
+@media (max-width: 390px) {
+  .start-brand p {
+    font-size: 26px;
+  }
+  .start-brand small {
+    font-size: 11px;
+  }
 }
 .bottom-nav {
   display: flex;
