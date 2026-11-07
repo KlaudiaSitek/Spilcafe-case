@@ -1,43 +1,35 @@
-# Brætspilscafé · Prototype Boss
+# Brætspilscafé 
 
-En side med vores 12 spil, bygget med almindelig HTML, CSS og JavaScript. Udseendet følger [Prototype Boss i Figma](https://www.figma.com/design/m8k4Oqegmx5s0POZymU8CT/Spilcaf%C3%A9-case--IXD----Maiken--Sara--Klaudia---Line?node-id=281-2). Logo, humørfigurer, spilbilleder, ikoner og hjul er hentet fra filen.
+En side med vores 12 spil, bygget med HTML, CSS og JavaScript. Udseendet følger [Prototype i Figma](https://www.figma.com/design/m8k4Oqegmx5s0POZymU8CT/Spilcaf%C3%A9-case--IXD----Maiken--Sara--Klaudia---Line?node-id=281-2). Logo, humørfigurer, spilbilleder, ikoner og hjul er hentet fra filen.
 
-## Siden i VS Code
-
-1. Åbn hele projektmappen i VS Code.
-2. Højreklik på `index.html`, og vælg **Open with Live Server**.
-3. Vælg **Log ind / gæst**, eller brug ikonerne nederst til at finde et spil.
-
-Der skal ikke installeres pakker eller køres en build-kommando. HTML-filen indlæser selv JavaScript-filerne i den rigtige rækkefølge.
 
 ## Filerne
 
-| Fil | Indhold |
-| --- | --- |
-| `index.html` | Sidernes tekst, felter, knapper og bundmenu |
-| `css/style.css` | Farver, størrelser og placeringer fra Figma |
-| `js/spil.js` | Arrayet med de 12 spil og deres attributter |
-| `js/script.js` | Søgning, filtre, sortering, spilvisning og skift mellem sider |
-| `js/sprog.js` | Danske og engelske tekster |
-| `js/konto.js` | Gæst, øvelseslogin og gemte spil |
-| `js/lykkehjul.js` | Tilfældigt spil og hjulets rotation |
-| `js/booking.js` | Valg af tid, lokale bookinger, ændring og aflysning |
-| `billeder/` | Billeder og ikoner, som siden bruger |
-| `.gitignore` | Holder `.vscode`, `.DS_Store` og midlertidige build-filer ude af Git |
+ Fil - Indhold 
+ 
+ `index.html`  Sidernes tekst, felter, knapper og bundmenu 
+ `css/style.css`  Farver, størrelser og placeringer fra Figma 
+ `js/spil.js`  Arrayet med de 12 spil og deres attributter 
+ `js/script.js`  Søgning, filtre, sortering, spilvisning og skift mellem sider 
+ `js/sprog.js`  Danske og engelske tekster 
+ `js/konto.js`  Gæst, øvelseslogin og gemte spil 
+ `js/lykkehjul.js`  Tilfældigt spil og hjulets rotation 
+ `js/booking.js`  Valg af tid, lokale bookinger, ændring og aflysning 
+ `billeder/`  Billeder og ikoner, som siden bruger 
+ `.gitignore`  Holder `.vscode`, `.DS_Store` og midlertidige build-filer ude af Git 
 
-`.gitignore` skjuler ikke filer i VS Code og fjerner ikke noget, der allerede er gemt i Git.
 
 ## Funktionerne i script.js
 
-`filtrerProdukter()` er stadig navnet fra undervisningsarket. Den kalder de mindre funktioner i rækkefølge:
+`filtrerProdukter()` Den kalder de mindre funktioner i rækkefølge:
 
-| Funktion | Hvad der sker |
-| --- | --- |
-| `hentFelter()` | Læser søgeordet og filtervalgene fra HTML |
-| `filtrerSpil(alleSpil, valg)` | Laver en kopi og beholder de spil, der passer |
-| `sorterSpil(filteredProducts, sorterEfter)` | Sætter resultatet i den valgte rækkefølge |
-| `displayProducts(list)` | Tilføjer én spilrække ad gangen med `forEach` |
-| `visFilterstatus(list, valg)` | Opdaterer antal resultater og teksten ved filtrene |
+ Funktion - Hvad der sker 
+
+ `hentFelter()`  Læser søgeordet og filtervalgene fra HTML 
+ `filtrerSpil(alleSpil, valg)`  Laver en kopi og beholder de spil, der passer 
+ `sorterSpil(filteredProducts, sorterEfter)`  Sætter resultatet i den valgte rækkefølge 
+ `displayProducts(list)`  Tilføjer én spilrække ad gangen med `forEach` 
+ `visFilterstatus(list, valg)`  Opdaterer antal resultater og teksten ved filtrene 
 
 Kategorierne findes både i en dropdown og som checkbokse i **Vælg filtre**. Checkboksene tillader flere kategorier på samme tid. Filtrene opdaterer resultatet, når de ændres. **Vis spil** lukker panelet.
 
@@ -45,17 +37,16 @@ Kategorierne findes både i en dropdown og som checkbokse i **Vælg filtre**. Ch
 
 ## Opgavens krav
 
-| Krav | Hvor det er brugt |
-| --- | --- |
-| Array af objekter | `const spil` i `spil.js` |
-| Alle spil med `forEach` | `displayProducts()` |
-| Tekstfelt og Søg-knap | Formularerne på forsiden og søgesiden; Enter virker også |
-| `toLowerCase`, `trim`, `includes` | `hentFelter()` og søgedelen i `filtrerSpil()` |
-| Kategori og range-input med `filter` | Checkboksene og tidsskyderen i filterpanelet |
-| Select og `sort` | **Sortér efter**: titel eller spilletid, begge retninger |
-| Mængdeoperation | `some` og `includes`: Kortspil ELLER Strategispil; derefter spillerantal OG tid OG de øvrige aktive filtre |
-| Søgning kan filtreres | Filterændringer arbejder videre med søgeordet i feltet |
-| Ingen database eller redigering af spil | Spildata ligger kun i `spil.js`; siden har ingen funktion til at ændre spil |
+
+ Array af objekter  `const spil` i `spil.js` 
+Alle spil med `forEach` , `displayProducts()`
+Tekstfelt og Søg-knap , Formularerne på forsiden og søgesiden; Enter virker også
+`toLowerCase`, `trim`, `includes` , `hentFelter()` og søgedelen i `filtrerSpil()` 
+ Kategori og range-input med `filter` .  Checkboksene og tidsskyderen i filterpanelet 
+|Select og `sort` | **Sortér efter**: titel eller spilletid, begge retninger 
+Mængdeoperation , `some` og `includes`: Kortspil ELLER Strategispil; derefter spillerantal OG tid OG de øvrige aktive filtre 
+ Søgning kan filtreres = Filterændringer arbejder videre med søgeordet i feltet 
+Ingen database eller redigering af spil - Spildata ligger kun i `spil.js`; siden har ingen funktion til at ændre spil 
 
 Spillets detaljer åbnes som en side. `<dialog>` bruges til filtre og bekræftelse af aflysning; en detaljedialog er valgfri i opgaven.
 
@@ -71,7 +62,7 @@ Hjulets 12 felter følger rækkefølgen i `spil.js`. Søgning sorterer en kopi, 
 
 ## Spildata fra kortlægningen
 
-Alder, stemning, udstyr, spillere, tid, regler, kategori og pladsbehov vises på detaljesiden. Tomme oplysninger vises som **Ikke angivet**. Kortlægningen mangler udstyr til Skak og Flip 7 samt stemning til Ludo; der er ikke indsat gæt i de felter.
+Alder, stemning, udstyr, spillere, tid, regler, kategori og pladsbehov vises på detaljesiden. Tomme oplysninger vises som Ikke angivet**. Kortlægningen mangler udstyr til Skak og Flip 7 samt stemning til Ludo; der er ikke indsat gæt i de felter.
 
 Nogle felter afhænger af udgaven: Monopoly filtreres som 2–6 spillere, selv om kortlægningen nævner udgaver til 8. Partners følger kortlægningens 2 eller 4, ikke intervallet 2–4. Data for Hvem er jeg? beskriver legen med sedler; billedet viser en købt æske. Alder og udstyr bør kontrolleres på de konkrete æsker, når kortlægningen færdiggøres.
 
