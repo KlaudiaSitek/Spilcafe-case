@@ -137,3 +137,10 @@ h2 {
 }
 
 
+.filter-boks {
+  background-color: #bed4db;
+ border-radius: 0;
+  padding: 25px;
+  margin-bottom: 30px;
+  max-width: 600px;
+}
