@@ -131,7 +131,7 @@ const spil = [
     navn: "Monopoly",
     kategorier: ["Strategispil", "Klassikere"],
     antalSpillere: [2, 3, 4, 5, 6],
-    spillerTekst: "2–6 spillere (nogle udgaver: 8)",
+    spillerTekst: "2–6 spillere",
     minTid: 60,
     maxTid: 180,
     regelniveauer: ["Middel"],

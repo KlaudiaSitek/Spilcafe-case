@@ -66,7 +66,7 @@ https://www.w3schools.com/jsref/prop_html_innerhtml.asp
     return etSpil.kategorier.includes(kategori);
   }
 
-  resultat = resultat.filter(tjekKategori);
+     resultat = resultat.filter(tjekKategori);
 
 
   // spilletid
@@ -86,23 +86,32 @@ https://www.w3schools.com/jsref/prop_html_innerhtml.asp
       if (x < y) {
         return -1;
       }
-
       if (x > y) {
         return 1;
-      }
-
+      } 
       return 0;
-    });
+    });;
   }
 
   if (sortering == "tid") {
-    resultat.sort(function(a, b) {
+        resultat.sort(function(a, b) {
       return a.maxTid - b.maxTid;
     });
   }
 
 
-  // spilkortene
+if (sortering == "flest-spillere") {
+       resultat.sort(function(a, b) {
+    let flestA = a.antalSpillere[a.antalSpillere.length - 1];
+    let flestB = b.antalSpillere[b.antalSpillere.length - 1];
+
+    return flestB - flestA;
+  });;
+}
+
+
+
+  // spillkortene
   let tekst = "";
 
   function visSpil(etSpil) {
@@ -113,18 +122,18 @@ https://www.w3schools.com/jsref/prop_html_innerhtml.asp
       tekst += "<img src='" + etSpil.billede + "' alt='" + etSpil.navn + "'>";
     }
 
-    tekst += "<div>";
-    tekst += "<h3>" + etSpil.navn + "</h3>";
-    tekst += "<p>" + etSpil.kategorier.join(", ") + "</p>";
-    tekst += "<p>" + etSpil.spillerTekst + "</p>";
-    tekst += "<p>" + etSpil.minTid + "-" + etSpil.maxTid + " min.</p>";
-    tekst += "</div>";
-    tekst += "</div>";
-  }
+         tekst += "<div>";
+         tekst += "<h3>" + etSpil.navn + "</h3>";
+         tekst += "<p>" + etSpil.kategorier.join(", ") + "</p>";
+          tekst += "<p>" + etSpil.spillerTekst + "</p>";
+         tekst += "<p>" + etSpil.minTid + "-" + etSpil.maxTid + " min.</p>";
+         tekst += "</div>";
+         tekst += "</div>";
+       }
 
-  resultat.forEach(visSpil);
+      resultat.forEach(visSpil);
 
-  document.getElementById("resultater").innerHTML = tekst;
-}
+      document.getElementById("resultater").innerHTML = tekst;
+     }
 
-opdaterSpil();
+opdaterSpil();;
