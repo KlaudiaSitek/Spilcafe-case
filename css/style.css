@@ -4,12 +4,12 @@
 /* Farverne */
 :root {
   --teal: #3a646d;
-  --yellow: #f4ebc0;
   --blue: #bed4db;
   --accent: #80b4bf;
   --paper: #f3f4f7;
   --muted: #44636c;
   --ink: #1e1e1e;
+  --green: #A7BFBB;
 }
 
 * {
@@ -144,3 +144,33 @@ h2 {
   margin-bottom: 30px;
   max-width: 600px;
 }
+
+ 
+input[type="range"] { accent-color: #3b5a60;
+   width: 100%;
+    max-width: 300px; }
+
+  select {
+  padding: 0.5rem 0.8rem;
+  border: 2px solid #3b5a60;
+  border-radius: 8px;
+  font: inherit;
+  background: #f8f8ea;
+  }
+
+      
+   .soege-boks {
+  text-align: center;
+  margin-top: 40px;}
+
+   .soege-boks input {
+  width: 65%;
+  padding: 14px;
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;}
+
+   .soege-boks button {
+  padding: 14px 20px;
+  font-size: 18px;
+  cursor: pointer;}
+   

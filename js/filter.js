@@ -57,6 +57,8 @@ https://www.w3schools.com/jsref/prop_html_innerhtml.asp
   let resultat = spil.filter(tjekNavn);
 
 
+
+
   // kategori
   function tjekKategori(etSpil) {
     if (kategori == "") {
@@ -67,6 +69,8 @@ https://www.w3schools.com/jsref/prop_html_innerhtml.asp
   }
 
      resultat = resultat.filter(tjekKategori);
+
+
 
 
   // spilletid
@@ -93,6 +97,9 @@ https://www.w3schools.com/jsref/prop_html_innerhtml.asp
     });;
   }
 
+
+
+  
   if (sortering == "tid") {
         resultat.sort(function(a, b) {
       return a.maxTid - b.maxTid;

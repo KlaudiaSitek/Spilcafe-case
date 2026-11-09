@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="../css/style.css">
 </head>
 
+
+
 <body>
 
       <div class="underside">
@@ -22,24 +24,46 @@
 
 
 
+
+
     <h3>Vælg kategori</h3>
 
        <label>
         <input type="radio" name="kategori" value="" checked
         onchange="opdaterSpil()"> Alle
+       </label>
+
+      <label>
+         <input type="radio" name="kategori" value="Kortspil"
+         onchange="opdaterSpil()"> Kortspil
       </label>
 
-    <label>
-        <input type="radio" name="kategori" value="Kortspil"
-        onchange="opdaterSpil()"> Kortspil
+     <label>
+        <input type="radio" name="kategori" value="Strategispil"
+        onchange="opdaterSpil()"> Strategispil
+     </label>
+
+      <label>
+        <input type="radio" name="kategori" value="Gættespil"
+        onchange="opdaterSpil()"> Gættespil
       </label>
 
-    <label>
-      <input type="radio" name="kategori" value="Strategispil"
-      onchange="opdaterSpil()"> Strategispil
+      <label>
+        <input type="radio" name="kategori" value="Selskabsspil"
+        onchange="opdaterSpil()"> Selskabsspil
+      </label>
+
+      <label>
+       <input type="radio" name="kategori" value="Kapløbsspil"
+       onchange="opdaterSpil()"> Kapløbsspil
     </label>
 
 
+
+
+
+
+    
     <h3>Spilletid</h3>
 
      <input type="range" id="tid" min="15" max="180"
@@ -48,23 +72,32 @@
          <p>Højst <span id="tidtekst">180</span> minutter</p>
 
 
+
+
      <h3>Sortér efter</h3>
 
-    <select id="sortering" onchange="opdaterSpil()">
-      <option value="titel">Titel A-Å</option>
+      <select id="sortering" onchange="opdaterSpil()">
+      <option value="titel">Alfabetisk</option>
       <option value="tid">Korteste spilletid</option>
       <option value="flest-spillere">Flest spillere</option>
 
 
+
+
     </select>
+
+  
+    <div class="soege-boks">
 
      <h3>Søg efter spil</h3>
 
-     <input type="text" id="soeg" >
-     <button onclick="opdaterSpil()">Søg</button>
+      <input type="text" id="soeg">
+      <button onclick="opdaterSpil()">Søg</button>
+
+    </div>
 
 
-    </div> 
+      
 
     <div id="resultater"></div>
 
