@@ -1,73 +1,71 @@
- 
+
 <!DOCTYPE html>
-< lang="da">
+<html lang="da">
+
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alle spil</title>
-<link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
-<>
 
-<div class="underside">
-      
-<h1>Find jeres spil.</h1>
+<body>
 
- Søgning
-<input type="text" id="soeg" placeholder="Søg efter spil">
-<button onclick="opdaterSpil()">Søg</button>
+  <div class="underside">
 
-Kategori
-<h3>Vælg kategori</h3>
+    <a href="index.html">← Tilbage</a>
 
-<label>
-  <input type="radio" name="kategori" value="" checked
-  onchange="opdaterSpil()"> Alle
-</label>
-
-<label>
-  <input type="radio" name="kategori" value="Kortspil"
-  onchange="opdaterSpil()"> Kortspil
-</label>
-
-<label>
-  <input type="radio" name="kategori" value="Strategispil"
-  onchange="opdaterSpil()"> Strategispil
-</label>
-
-Spilletid
-<h3>Spilletid</h3>
-<input type="range" id="tid" min="15" max="180"
-value="180" step="15" oninput="opdaterSpil()">
-
-<p>Højst <span id="tidtekst">180</span> minutter</p>
-
-Sortering
-<h3>Sortér efter</h3>
-<select id="sortering" onchange="opdaterSpil()">
-  <option value="titel">Titel A-Å</option>
-  <option value="tid">Korteste spilletid</option>
-</select>
-
-Her viser JavaScript spillene
-<div id="resultater"></div>
-
-  <a href="index.html">Tilbage</a>
-  <h1>Find jeres spil.</h1>
-  <p>12 spil at vælge imellem</p>
+    <h1>Find jeres spil.</h1>
+    <p>12 spil at vælge imellem</p>
 
 
-</div>
+    <h3>Søg efter spil</h3>
+
+    <input type="text" id="soeg" placeholder="Søg efter spil">
+    <button onclick="opdaterSpil()">Søg</button>
 
 
-<script src="js/spil.js"></script>
-<script src="js/filter.js"></script>
+    <h3>Vælg kategori</h3>
+
+    <label>
+      <input type="radio" name="kategori" value="" checked
+      onchange="opdaterSpil()"> Alle
+    </label>
+
+    <label>
+      <input type="radio" name="kategori" value="Kortspil"
+      onchange="opdaterSpil()"> Kortspil
+    </label>
+
+    <label>
+      <input type="radio" name="kategori" value="Strategispil"
+      onchange="opdaterSpil()"> Strategispil
+    </label>
 
 
-<div id="resultater"></div>
+    <h3>Spilletid</h3>
 
-<script src="../js/spil.js"></script>
-<script src="../js/filter.js"></script>
+    <input type="range" id="tid" min="15" max="180"
+    value="180" step="15" oninput="opdaterSpil()">
+
+    <p>Højst <span id="tidtekst">180</span> minutter</p>
+
+
+    <h3>Sortér efter</h3>
+
+    <select id="sortering" onchange="opdaterSpil()">
+      <option value="titel">Titel A-Å</option>
+      <option value="tid">Korteste spilletid</option>
+    </select>
+
+spillekort
+    <div id="resultater"></div>
+
+  </div>
+
+java
+  <script src="../js/spil.js"></script>
+  <script src="../js/filter.js"></script>
 
 </body>
 </html>
-
