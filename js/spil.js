@@ -1,19 +1,15 @@
-// Et objekt indeholder oplysninger om ét spil. Arrays bruges ved flere værdier.
-// Spildata stammer fra vores kortlægning og kan afhænge af udgaven.
+
 const spil = [
   {
     id: "uno",
     navn: "UNO",
-    forkortelse: "UNO",
     kategorier: ["Familiespil", "Selskabsspil", "Kortspil"],
     antalSpillere: [2, 3, 4, 5, 6, 7, 8, 9, 10],
     spillerTekst: "2–10 spillere",
     minTid: 15,
     maxTid: 30,
     regelniveauer: ["Let"],
-    spilform: "Vær den første spiller, der slipper af med alle sine kort.",
     stemning: ["Hyggeligt", "Intens overlevelseskamp"],
-    humoer: ["Sjov"],
     udstyr: ["Kort"],
     billede: "billeder/uno.png",
     pladsbehov: "Lille",
@@ -21,9 +17,9 @@ const spil = [
     note: "",
   },
   {
+    
     id: "skak",
     navn: "Skak",
-    forkortelse: "SK",
     kategorier: ["Strategispil"],
     antalSpillere: [2],
     spillerTekst: "2 spillere",
@@ -32,8 +28,7 @@ const spil = [
     regelniveauer: ["Middel"],
     spilform: "Sæt modstanderens konge skakmat.",
     stemning: ["Intens fordybelse", "Hygge", "Mental duel"],
-    humoer: ["Battle"],
-    udstyr: [],
+    udstyr: [skakbræt, 32 skakbrikker],
     billede: "billeder/skak.png",
     pladsbehov: "Mellem",
     alder: "Fra ca. 5–7 år (afhænger af udgaven)",
@@ -42,7 +37,6 @@ const spil = [
   {
     id: "ludo",
     navn: "Ludo",
-    forkortelse: "L",
     kategorier: ["Kapløbsspil"],
     antalSpillere: [2, 3, 4],
     spillerTekst: "2–4 spillere",
@@ -56,12 +50,11 @@ const spil = [
     billede: "billeder/ludo.png",
     pladsbehov: "Mellem",
     alder: "Fra ca. 5–6 år (afhænger af udgaven)",
-    note: "",
+
   },
   {
     id: "trivial-pursuit",
     navn: "Trivial Pursuit",
-    forkortelse: "TP",
     kategorier: ["Quiz og viden"],
     antalSpillere: [2, 3, 4, 5, 6],
     spillerTekst: "2–6 spillere",
@@ -76,12 +69,11 @@ const spil = [
     billede: "billeder/trivial-pursuit.png",
     pladsbehov: "Stor",
     alder: "Fra 15–16 år (afhænger af udgaven)",
-    note: "",
+
   },
   {
     id: "det-daarlige-selskab",
     navn: "Det dårlige selskab",
-    forkortelse: "DDS",
     kategorier: ["Ordkort"],
     antalSpillere: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
     spillerTekst: "3–16 spillere",
@@ -96,12 +88,11 @@ const spil = [
     billede: "billeder/det-daarlige-selskab.png",
     pladsbehov: "Lille",
     alder: "16+ år",
-    note: "",
+  
   },
   {
     id: "hitster",
     navn: "Hitster",
-    forkortelse: "H",
     kategorier: ["Gættespil", "Musik"],
     antalSpillere: [2, 3, 4, 5, 6, 7, 8, 9, 10],
     spillerTekst: "2–10 spillere",
@@ -116,12 +107,11 @@ const spil = [
     billede: "billeder/hitster.png",
     pladsbehov: "Lille",
     alder: "Fra 15–16 år (afhænger af udgaven)",
-    note: "",
+  
   },
   {
     id: "hvem-er-jeg",
     navn: "Hvem er jeg?",
-    forkortelse: "?",
     kategorier: ["Gættespil", "Selskabsspil"],
     antalSpillere: [3, 4, 5, 6, 7, 8],
     spillerTekst: "3–8 spillere (anbefalet)",
@@ -135,12 +125,10 @@ const spil = [
     billede: "billeder/hvem-er-jeg.png",
     pladsbehov: "Lille",
     alder: "Ingen fast aldersanbefaling",
-    note: "Data beskriver legen med sedler. Hvis I vælger æsken på vores billede, skal data tilpasses den udgave.",
-  },
+    },
   {
     id: "monopoly",
     navn: "Monopoly",
-    forkortelse: "M",
     kategorier: ["Strategispil", "Klassikere"],
     antalSpillere: [2, 3, 4, 5, 6],
     spillerTekst: "2–6 spillere (nogle udgaver: 8)",
@@ -164,12 +152,10 @@ const spil = [
     billede: "billeder/monopoly.png",
     pladsbehov: "Mellem",
     alder: "8+ år",
-    note: "Tjek vores udgave. Filteret bruger 2–6 spillere, indtil det er afklaret, om vores æske tillader 8.",
   },
   {
     id: "cluedo",
     navn: "Cluedo",
-    forkortelse: "C",
     kategorier: ["Mysterium", "Gættespil", "Strategispil"],
     antalSpillere: [2, 3, 4, 5, 6],
     spillerTekst: "2–6 spillere",
@@ -191,7 +177,6 @@ const spil = [
     billede: "billeder/cluedo.png",
     pladsbehov: "Stor",
     alder: "8+ år",
-    note: "",
   },
   {
     id: "hint",
@@ -211,7 +196,6 @@ const spil = [
     billede: "billeder/hint.png",
     pladsbehov: "Stor",
     alder: "15+ år",
-    note: "",
   },
   {
     id: "partners",
@@ -231,7 +215,6 @@ const spil = [
     billede: "billeder/partners.png",
     pladsbehov: "Lille",
     alder: "8+ år",
-    note: "Kortlægningen angiver 2 eller 4 spillere. Bekræft, at det passer til vores konkrete udgave.",
   },
   {
     id: "flip-seven",
@@ -251,6 +234,5 @@ const spil = [
     billede: "billeder/flip-seven.png",
     pladsbehov: "Lille",
     alder: "8+ år",
-    note: "",
   },
 ];
