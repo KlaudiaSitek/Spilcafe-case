@@ -28,7 +28,7 @@ const spil = [
     regelniveauer: ["Middel"],
     spilform: "Sæt modstanderens konge skakmat.",
     stemning: ["Intens fordybelse", "Hygge", "Mental duel"],
-    udstyr: [skakbræt, 32 skakbrikker],
+    udstyr: ["Skakbræt", "32 skakbrikker"],
     billede: "billeder/skak.png",
     pladsbehov: "Mellem",
     alder: "Fra ca. 5–7 år (afhænger af udgaven)",
