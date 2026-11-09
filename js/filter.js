@@ -1,42 +1,97 @@
 
 function opdaterSpil() {
 
-  // Hent teksten fra søgefeltet
-  let tekst = document.getElementById("soeg").value;
-  tekst = tekst.toLowerCase().trim();
+/*
+Kilder - W3Schools
 
-  // Søg i spillenes navne
-  let resultat = spil.filter(function(etSpil) {
-    return etSpil.navn.toLowerCase().includes(tekst);
-  });
+getElementById():
+https://www.w3schools.com/jsref/met_document_getelementbyid.asp
 
-  // Hent den valgte kategori
-  let kategori = document.querySelector(
-    'input[name="kategori"]:checked'
-  ).value;
+querySelector():
+https://www.w3schools.com/jsref/met_document_queryselector.asp
 
-  // Filtrer efter kategori
-  if (kategori != "") {
-    resultat = resultat.filter(function(etSpil) {
-      return etSpil.kategorier.includes(kategori);
-    });
-  }
+filter():
+https://www.w3schools.com/jsref/jsref_filter.asp
 
-  // Filtrer efter spilletid
+forEach():
+https://www.w3schools.com/jsref/jsref_foreach.asp
+
+sort():
+https://www.w3schools.com/js/js_array_sort.asp
+
+toLowerCase():
+https://www.w3schools.com/jsref/jsref_tolowercase.asp
+
+trim():
+https://www.w3schools.com/jsref/jsref_trim_string.asp
+
+String includes():
+https://www.w3schools.com/jsref/jsref_includes.asp
+
+Array includes():
+https://www.w3schools.com/jsref/jsref_includes_array.asp
+
+join():
+https://www.w3schools.com/jsref/jsref_join.asp
+
+innerHTML:
+https://www.w3schools.com/jsref/prop_html_innerhtml.asp
+*/
+
+  //  værdier fra HTML
+  let soegning = document.getElementById("soeg").value;
+  soegning = soegning.toLowerCase().trim();
+
+  let kategori = document.querySelector('input[name="kategori"]:checked').value;
   let tid = Number(document.getElementById("tid").value);
-
-  document.getElementById("tidtekst").textContent = tid;
-
-  resultat = resultat.filter(function(etSpil) {
-    return etSpil.maxTid <= tid;
-  });
-
-  // Sortér spillene
   let sortering = document.getElementById("sortering").value;
 
+  document.getElementById("tidtekst").innerHTML = tid;
+
+
+  // Søg ---spilnavn
+  function tjekNavn(etSpil) {
+    return etSpil.navn.toLowerCase().includes(soegning);
+  }
+
+  let resultat = spil.filter(tjekNavn);
+
+
+  // kategori
+  function tjekKategori(etSpil) {
+    if (kategori == "") {
+      return true;
+    }
+
+    return etSpil.kategorier.includes(kategori);
+  }
+
+  resultat = resultat.filter(tjekKategori);
+
+
+  // spilletid
+  function tjekTid(etSpil) {
+    return etSpil.maxTid <= tid;
+  }
+
+  resultat = resultat.filter(tjekTid);
+
+
+  // Sorter spil
   if (sortering == "titel") {
     resultat.sort(function(a, b) {
-      return a.navn.localeCompare(b.navn, "da");
+      let x = a.navn.toLowerCase();
+      let y = b.navn.toLowerCase();
+
+      if (x < y) {
+        return -1;
+      }
+
+      if (x > y) {
+        return 1;
+      }
+
+      return 0;
     });
   }
 
@@ -46,26 +101,30 @@ function opdaterSpil() {
     });
   }
 
-  // Vis spillene på siden
-  document.getElementById("resultater").innerHTML = "";
 
+  // spilkortene
+  let tekst = "";
 
-resultat.forEach(function(etSpil) {
+  function visSpil(etSpil) {
 
-  document.getElementById("resultater").innerHTML +=
-    "<div class='spilkort'>" +
-      "<img src='" + etSpil.billede + "'>" +
-      "<div>" +
-        "<h3>" + etSpil.navn + "</h3>" +
-        "<p>" + etSpil.kategorier.join(", ") + "</p>" +
-        "<p>" + etSpil.spillerTekst + "</p>" +
-        "<p>" + etSpil.minTid + "-" + etSpil.maxTid + " min.</p>" +
-      "</div>" +
-    "</div>";
+    tekst += "<div class='spilkort'>";
 
-});
+    if (etSpil.billede != "") {
+      tekst += "<img src='" + etSpil.billede + "' alt='" + etSpil.navn + "'>";
+    }
 
+    tekst += "<div>";
+    tekst += "<h3>" + etSpil.navn + "</h3>";
+    tekst += "<p>" + etSpil.kategorier.join(", ") + "</p>";
+    tekst += "<p>" + etSpil.spillerTekst + "</p>";
+    tekst += "<p>" + etSpil.minTid + "-" + etSpil.maxTid + " min.</p>";
+    tekst += "</div>";
+    tekst += "</div>";
+  }
 
+  resultat.forEach(visSpil);
+
+  document.getElementById("resultater").innerHTML = tekst;
 }
 
 opdaterSpil();
