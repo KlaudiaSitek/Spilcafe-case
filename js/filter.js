@@ -49,14 +49,22 @@ function opdaterSpil() {
   // Vis spillene på siden
   document.getElementById("resultater").innerHTML = "";
 
-  resultat.forEach(function(etSpil) {
-    document.getElementById("resultater").innerHTML +=
-      "<div class='spilkort'>" +
-      "<h3>" + etSpil.navn + "</h3>" +
-      "<p>" + etSpil.kategorier.join(", ") + "</p>" +
-      "<p>" + etSpil.spillerTekst + "</p>" +
-      "</div>";
-  });
+
+resultat.forEach(function(etSpil) {
+
+  document.getElementById("resultater").innerHTML +=
+    "<div class='spilkort'>" +
+      "<img src='" + etSpil.billede + "'>" +
+      "<div>" +
+        "<h3>" + etSpil.navn + "</h3>" +
+        "<p>" + etSpil.kategorier.join(", ") + "</p>" +
+        "<p>" + etSpil.spillerTekst + "</p>" +
+        "<p>" + etSpil.minTid + "-" + etSpil.maxTid + " min.</p>" +
+      "</div>" +
+    "</div>";
+
+});
+
 
 }
 

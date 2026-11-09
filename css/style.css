@@ -1,4 +1,7 @@
-Farverne 
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Nobile:wght@400;700&display=swap');
+
+/* Farverne */
 :root {
   --teal: #3a646d;
   --yellow: #f4ebc0;
@@ -8,12 +11,10 @@ Farverne
   --muted: #44636c;
   --ink: #1e1e1e;
 }
+
 * {
   box-sizing: border-box;
 }
-
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Nobile:wght@400;700&display=swap');
 
 body {
   margin: 0;
@@ -94,6 +95,45 @@ h2 {
 
 .logo img {
   width: 1200px;
+}
+
+
+.underside {
+  width: 440px;
+  margin: 30px auto;
+  background-color: white;
+  padding: 15px;
+  border-radius: 30px;
+}
+
+#resultater {
+  margin-top: 30px;
+}
+
+
+.spilkort {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: #A7BFBB;
+  padding: 10px;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.spilkort h3 {
+  font-family: 'Nobile', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+}
+
+.spilkort p {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #000000;
 }
 
 
