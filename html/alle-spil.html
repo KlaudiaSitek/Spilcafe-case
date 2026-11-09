@@ -1,6 +1,60 @@
- <a href="index.html">Tilbage</a>
+ 
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <title>Alle spil</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="underside">
+      
+<h1>Find jeres spil.</h1>
+
+ Søgning
+<input type="text" id="soeg" placeholder="Søg efter spil">
+<button onclick="opdaterSpil()">Søg</button>
+
+Kategori
+<h3>Vælg kategori</h3>
+
+<label>
+  <input type="radio" name="kategori" value="" checked
+  onchange="opdaterSpil()"> Alle
+</label>
+
+<label>
+  <input type="radio" name="kategori" value="Kortspil"
+  onchange="opdaterSpil()"> Kortspil
+</label>
+
+<label>
+  <input type="radio" name="kategori" value="Strategispil"
+  onchange="opdaterSpil()"> Strategispil
+</label>
+
+Spilletid
+<h3>Spilletid</h3>
+<input type="range" id="tid" min="15" max="180"
+value="180" step="15" oninput="opdaterSpil()">
+
+<p>Højst <span id="tidtekst">180</span> minutter</p>
+
+Sortering
+<h3>Sortér efter</h3>
+<select id="sortering" onchange="opdaterSpil()">
+  <option value="titel">Titel A-Å</option>
+  <option value="tid">Korteste spilletid</option>
+</select>
+
+Her viser JavaScript spillene
+<div id="resultater"></div>
+
+  <a href="index.html">Tilbage</a>
   <h1>Find jeres spil.</h1>
   <p>12 spil at vælge imellem</p>
+
   <div class="spilkort">UNO</div>
   <div class="spilkort">Skak</div>
   <div class="spilkort">Ludo</div>
