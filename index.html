@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Find et brætspil til din næste pause på Erhvervsakademi Aarhus."
+    />
+    <title>Brætspilscafé · EAA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nobile:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    
+          </div>
+          <div class="home-intro">
+            <p class="eyebrow" data-tekst="pause">
+              EN PAUSE MED PLADS TIL FÆLLESSKAB
+            </p>
+            <button class="small-button language-button" type="button">
+              ENG
+            </button>
+          </div>
+          <h1 class="home-title">
+            <span data-tekst="pauseTitel">Tid til en pause?</span><br /><span
+              data-tekst="naesteSpil"
+              >Find jeres næste spil her.</span
+            >
+          </h1>
+          <form class="search" id="home-search" role="search">
+            <label class="sr-only" for="search-field" data-tekst="soegEfter"
+              >Søg efter spil</label
+            >
+            <input
+              type="search"
+              id="search-field"
+              placeholder="Søg efter dit yndlingsspil…"
+              data-placeholder="homePlaceholder"
+              autocomplete="off"
+            />
+            <button type="submit" data-tekst="soeg">Søg</button>
+          </form>
+          <h2 class="mood-question" data-tekst="humoerSporgsmaal">
+            Hvad er I i humør til?
+          </h2>
+          <div class="moods">
+            <button class="mood" type="button" data-mood="Sjov">
+              <img src="billeder/sjov.png" alt="" /><span data-tekst="Sjov"
+                >Sjov</span
+              >
+            </button>
+            <button class="mood" type="button" data-mood="Hygge">
+              <img src="billeder/hygge.png" alt="" /><span data-tekst="Hygge"
+                >Hygge</span
+              >
+            </button>
+            <button class="mood" type="button" data-mood="Svær">
+              <img src="billeder/svaer.png" alt="" /><span data-tekst="Svær"
+                >Svær</span
+              >
+            </button>
+            <button class="mood" type="button" data-mood="Battle">
+              <img src="billeder/battle.png" alt="" /><span data-tekst="Battle"
+                >Battle</span
+              >
+            </button>
+          </div>
+        </section>
+
+        <section class="page mood-page" id="humoer" hidden>
+          <a
+            class="small-button back mood-back"
+            href="#opdag"
+            data-tekst="tilbage"
+            >Tilbage</a
+          >
+          <div class="mood-heading">
+            <img id="mood-image" src="billeder/sjov.png" alt="" />
+            <h1 id="mood-title">Sjov</h1>
+          </div>
+          <ul class="card-grid" id="mood-games"></ul>
+          <a
+            class="text-link mood-more"
+            id="mood-more"
+            href="#alle-spil"
+            data-tekst="seAlle"
+            >Se alle spil</a
+          >
+        </section>
+
+
+    </dialog>
+    <p class="toast" id="toast" role="status" aria-live="polite" hidden></p>
+    <script src="js/spil.js"></script>
+    <script src="js/script.js"></script>
+ 
+  </body>
+</html>
