@@ -159,18 +159,44 @@ input[type="range"] { accent-color: #3b5a60;
   }
 
       
-   .soege-boks {
+
+
+.soege-boks {
   text-align: center;
-  margin-top: 40px;}
+  margin-top: 40px;
+}
 
-   .soege-boks input {
-  width: 65%;
-  padding: 14px;
-  font-size: 18px;
-  font-family: 'Inter', sans-serif;}
+.search-container {
+  max-width: 450px;
+  margin: auto;
+  padding: 10px;
+  background-color: #e9e9e9;
+}
 
-   .soege-boks button {
-  padding: 14px 20px;
+.search-container input[type=text] {
+  float: left;
+  width: 84%;
+  height: 50px;
+  padding: 10px;
   font-size: 18px;
-  cursor: pointer;}
-   
+  border: none;
+  background-color: white;
+}
+
+.search-container button {
+  float: left;
+  width: 16%;
+  height: 50px;
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  background-color: #d9d9d9;
+  color: black;
+  cursor: pointer;
+}
+
+.search-container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
